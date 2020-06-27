@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../fields/xsd/element_rules.xsd">
+    <Page name="Главная страница">
+        <Collection name="Главное меню" locator="//ul[@class='main-menu']//li" isLoaded="true">
+            <StaticText name="Наименование" locator="."/>
+        </Collection>
+        <Collection name="Подменю" locator="//a[@class='menu-section-link']">
+            <StaticText name="Наименование" locator="."/>
+        </Collection>
+    </Page>
+    <Page name="Кредитные карты">
+        <Collection name="Карты" locator="//div[@class='b-card b-card--card']" isLoaded="true">
+            <StaticText name="Наименование" locator="."/>
+            <Button name="Оформить карту" locator=".//a[@class='button']"/>
+        </Collection>
+    </Page>
+    <Page name="Оставить заявку">
+        <StaticText name="Оставьте заявку сейчас" locator="//h3[contains(text(),'Оставьте заявку сейчас')]"/>
+        <TextInput name="ФИО" isLoaded="true"
+                   locator="//label[contains(text(),'Фамилия, Имя и Отчество')]/../../div[@class='text-field__input-box']//input[2]"/>
+        <TextInput name="Дата рождения" isLoaded="true"
+                   locator="//label[contains(text(),'Дата рождения')]/../../div[@class='text-field__input-box']//input"/>
+        <TextInput name="E-mail"
+                   locator="//label[contains(text(),'Email')]/../../div[@class='text-field__input-box']//input"/>
+        <Collection name="Осталось заполнить поля" locator="//div[@class='page-item__invalid']//a">
+            <StaticText name="Телефон" locator="."/>
+        </Collection>
+    </Page>
+</Pages>
